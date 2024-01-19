@@ -26,6 +26,7 @@ namespace CopyLayerPath
         {
             GetObject go = new GetObject();
             go.SetCommandPrompt("Select one object.");
+            go.AcceptNothing(true);
             Format current = Format.FullPath;
             go.AddOptionEnumList("format", current);
 
@@ -33,6 +34,8 @@ namespace CopyLayerPath
             {
                 switch (go.Get())
                 {
+                    case GetResult.Cancel:
+                        return Result.Cancel;
                     case GetResult.Option:
                         current = (Format)go.Option().CurrentListOptionIndex;
                         break;
