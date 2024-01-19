@@ -3,7 +3,6 @@ using Rhino.Commands;
 using Rhino.Input;
 using Rhino.Input.Custom;
 using Rhino.DocObjects;
-using System.Windows;
 using System.Windows.Forms;
 
 namespace CopyLayerPath
